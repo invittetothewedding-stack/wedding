@@ -176,6 +176,149 @@
     .cd-num { font-family: 'Cormorant Garamond', serif; font-size: 35px; color: #f5ede0; }
     .cd-label { font-size: 8px; letter-spacing: 0.2em; color: #7a6a58; text-transform: uppercase; }
 
+    /* --- GUESTBOOK --- */
+    .guestbook-section {
+      margin: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .section-kicker {
+      font-size: 10px;
+      color: #c9a96e;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      font-weight: 300;
+      font-style: italic;
+      color: #f5ede0;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-copy {
+      max-width: 360px;
+      margin: 0 auto 1.5rem;
+      color: #9e8a72;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .guestbook-form {
+      display: grid;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .guestbook-field {
+      width: 100%;
+      border: 0.5px solid rgba(201,169,110,0.22);
+      border-radius: 4px;
+      background: rgba(201,169,110,0.04);
+      color: #f5ede0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .guestbook-field::placeholder { color: #6d5f50; }
+    .guestbook-field:focus {
+      border-color: rgba(201,169,110,0.7);
+      background: rgba(201,169,110,0.07);
+    }
+
+    textarea.guestbook-field {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .guestbook-status {
+      min-height: 18px;
+      color: #9e8a72;
+      font-size: 10px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .guestbook-status.error { color: #d4a28f; }
+    .guestbook-status.success { color: #c9a96e; }
+
+    .guestbook-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+      text-align: left;
+    }
+
+    .guestbook-empty,
+    .guestbook-loading {
+      color: #7a6a58;
+      font-size: 11px;
+      line-height: 1.7;
+      text-align: center;
+      padding: 1rem;
+      border: 0.5px solid rgba(201,169,110,0.12);
+      border-radius: 4px;
+      background: rgba(201,169,110,0.03);
+    }
+
+    .guestbook-card {
+      border: 0.5px solid rgba(201,169,110,0.16);
+      border-radius: 4px;
+      background: rgba(201,169,110,0.045);
+      padding: 1rem;
+    }
+
+    .guestbook-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .guestbook-name {
+      font-family: 'Cormorant Garamond', serif;
+      color: #f5ede0;
+      font-size: 19px;
+      font-style: italic;
+      overflow-wrap: anywhere;
+    }
+
+    .guestbook-time {
+      flex: 0 0 auto;
+      color: #6d5f50;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .guestbook-message {
+      color: #9e8a72;
+      font-size: 11px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 380px) {
+      .guestbook-card-head {
+        display: block;
+      }
+
+      .guestbook-time {
+        display: block;
+        margin-top: 0.25rem;
+      }
+    }
+
     /* ── MUSIC ── */
     #musicControl {
       position: fixed; bottom: 25px; right: 25px;
@@ -222,16 +365,11 @@
     <div class="tamu-section reveal">
       <p style="color:#9e8a72; font-size:10px; letter-spacing:0.3em; text-transform:uppercase;">Kepada Yth:</p>
       <h3 id="namaTamu" style="color:#f5ede0; font-family:'Cormorant Garamond', serif; font-size:24px; font-weight:300; margin-top:5px;">Tamu Undangan</h3>
+      <p style="color:#9e8a72; font-size:11px; letter-spacing:0.2em; margin-top:6px;">di Tempat</p>
     </div>
 
     <div class="couple-intro reveal">
       <p style="color:#c9a96e; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:2rem;">Kami mengundang Anda di pernikahan kami:</p>
-      
-      <div class="photo-grid">
-        <img class="ph ph-tall reveal" src="foto1.jpeg" alt="Foto 1">
-        <img class="ph ph-small reveal" src="foto2.jpeg" alt="Foto 2">
-        <img class="ph ph-small reveal" src="foto3.jpeg" alt="Foto 3">
-      </div>
 
       <div class="reveal">
         <p style="font-size:10px; color:#9e8a72; text-transform:uppercase; letter-spacing:2px;">Mempelai Pria</p>
@@ -277,7 +415,7 @@
       <div class="event-address">
         <span class="material-symbols-outlined icon-inline">location_on</span>Jl. Lili 2, Karang Anyar, Kec. Tarakan Bar.
       </div>
-      <a class="map-btn" href="https://maps.app.goo.gl/vgkczkpCHTYc63jf8?g_st=aw" target="_blank">Lihat Lokasi</a>
+      <a class="map-btn" href="https://share.google/MpzjTPQf03U0aaBcV" target="_blank">Lihat Lokasi</a>
     </div>
 
     <div class="event-block reveal">
@@ -337,7 +475,36 @@
       </div>
     </div>
 
+    <div class="guestbook-section reveal">
+      <div class="divider-line"><span class="divider-ornament">✦ ✦ ✦</span></div>
+      <p class="section-kicker">Kartu Ucapan</p>
+      <h2 class="section-title">Doa & Ucapan</h2>
+      <p class="section-copy">
+        Tinggalkan doa dan ucapan terbaik untuk kedua mempelai. Ucapan akan tampil di halaman ini setelah berhasil dikirim.
+      </p>
+
+      <form id="guestbookForm" class="guestbook-form" novalidate>
+        <input id="guestName" class="guestbook-field" type="text" name="name" placeholder="Nama Anda" maxlength="60" autocomplete="name" required>
+        <textarea id="guestMessage" class="guestbook-field" name="message" placeholder="Tulis ucapan..." maxlength="500" required></textarea>
+        <button id="guestSubmit" type="submit" class="map-btn">Kirim Ucapan</button>
+        <p id="guestStatus" class="guestbook-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div id="guestbookList" class="guestbook-list" aria-live="polite">
+        <div class="guestbook-loading">Memuat ucapan...</div>
+      </div>
+    </div>
+
     <p class="footer-text reveal">Kami yang berbahagia,<br>Esra & Icha</p>
+
+    <div class="reveal" style="margin-top: 3rem;">
+      <div class="divider-line"><span class="divider-ornament">⋆ ⋆ ⋆</span></div>
+      <div class="photo-grid" style="margin-bottom: 0;">
+        <img class="ph ph-tall reveal" src="foto1.jpeg" alt="Foto Esra dan Icha 1">
+        <img class="ph ph-small reveal" src="foto2.jpeg" alt="Foto Esra dan Icha 2">
+        <img class="ph ph-small reveal" src="foto3.jpeg" alt="Foto Esra dan Icha 3">
+      </div>
+    </div>
   </div>
 </div>
 
@@ -419,6 +586,182 @@
   }
   setInterval(updateCountdown, 1000);
   updateCountdown();
+</script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp,
+    query,
+    orderBy,
+    limit,
+    onSnapshot
+  } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
+
+  /*
+    LANGKAH FIREBASE CONFIG:
+    1. Buka Firebase Console > Project settings > General.
+    2. Tambahkan Web App jika belum ada.
+    3. Salin object firebaseConfig dari Firebase.
+    4. Ganti nilai placeholder di bawah ini dengan config project Anda.
+    5. Aktifkan Cloud Firestore dan pastikan rules mengizinkan create/read sesuai kebutuhan undangan.
+  */
+  const firebaseConfig = {
+    apiKey: "AIzaSyDmxFNXuhWzOqdIpTz_GI-scRQ7DsItX6A",
+    authDomain: "undangan-esra-icha-e5b00.firebaseapp.com",
+    projectId: "undangan-esra-icha-e5b00",
+    storageBucket: "undangan-esra-icha-e5b00.firebasestorage.app",
+    messagingSenderId: "1017009176637",
+    appId: "1:1017009176637:web:f7590e4665b90594ecaa54",
+    measurementId: "G-M3LVG51QY7"
+  };
+
+  const form = document.getElementById("guestbookForm");
+  const nameInput = document.getElementById("guestName");
+  const messageInput = document.getElementById("guestMessage");
+  const submitButton = document.getElementById("guestSubmit");
+  const statusText = document.getElementById("guestStatus");
+  const list = document.getElementById("guestbookList");
+
+  const isFirebaseReady = Object.values(firebaseConfig).every((value) => value && !value.includes("ISI_"));
+  const dateFormatter = new Intl.DateTimeFormat("id-ID", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+
+  function setStatus(message, type = "") {
+    statusText.textContent = message;
+    statusText.className = `guestbook-status ${type}`.trim();
+  }
+
+  function setSubmitLoading(isLoading) {
+    submitButton.disabled = isLoading;
+    submitButton.textContent = isLoading ? "Mengirim..." : "Kirim Ucapan";
+    submitButton.style.opacity = isLoading ? "0.65" : "1";
+    submitButton.style.cursor = isLoading ? "wait" : "pointer";
+  }
+
+  function createEmptyState(message, className = "guestbook-empty") {
+    const empty = document.createElement("div");
+    empty.className = className;
+    empty.textContent = message;
+    return empty;
+  }
+
+  function formatTimestamp(timestamp) {
+    if (!timestamp || typeof timestamp.toDate !== "function") return "Baru saja";
+    return dateFormatter.format(timestamp.toDate()).replace(".", ":");
+  }
+
+  function renderGuestbook(docs) {
+    list.textContent = "";
+
+    if (docs.length === 0) {
+      list.appendChild(createEmptyState("Belum ada ucapan. Jadilah yang pertama mengirim doa."));
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    docs.forEach((doc) => {
+      const data = doc.data();
+      const card = document.createElement("article");
+      card.className = "guestbook-card";
+
+      const head = document.createElement("div");
+      head.className = "guestbook-card-head";
+
+      const name = document.createElement("h3");
+      name.className = "guestbook-name";
+      name.textContent = data.name || "Tamu Undangan";
+
+      const time = document.createElement("time");
+      time.className = "guestbook-time";
+      time.textContent = formatTimestamp(data.createdAt);
+
+      const message = document.createElement("p");
+      message.className = "guestbook-message";
+      message.textContent = data.message || "";
+
+      head.append(name, time);
+      card.append(head, message);
+      fragment.appendChild(card);
+    });
+
+    list.appendChild(fragment);
+  }
+
+  if (!isFirebaseReady) {
+    submitButton.disabled = true;
+    submitButton.style.opacity = "0.65";
+    setStatus("Masukkan firebaseConfig terlebih dahulu agar guestbook aktif.", "error");
+    list.textContent = "";
+    list.appendChild(createEmptyState("Guestbook siap digunakan setelah Firebase dikonfigurasi."));
+  } else {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const guestbookCollection = collection(db, "guestbook");
+    const guestbookQuery = query(guestbookCollection, orderBy("createdAt", "desc"), limit(50));
+
+    onSnapshot(
+      guestbookQuery,
+      (snapshot) => renderGuestbook(snapshot.docs),
+      (error) => {
+        console.error("Gagal memuat guestbook:", error);
+        list.textContent = "";
+        list.appendChild(createEmptyState("Ucapan belum bisa dimuat. Periksa koneksi atau rules Firestore.", "guestbook-loading"));
+      }
+    );
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = nameInput.value.replace(/\s+/g, " ").trim();
+      const message = messageInput.value.trim();
+
+      if (!name) {
+        setStatus("Nama wajib diisi.", "error");
+        nameInput.focus();
+        return;
+      }
+
+      if (!message) {
+        setStatus("Ucapan wajib diisi.", "error");
+        messageInput.focus();
+        return;
+      }
+
+      if (name.length > 60 || message.length > 500) {
+        setStatus("Nama atau ucapan terlalu panjang.", "error");
+        return;
+      }
+
+      setSubmitLoading(true);
+      setStatus("Mengirim ucapan...");
+
+      try {
+        await addDoc(guestbookCollection, {
+          name,
+          message,
+          createdAt: serverTimestamp()
+        });
+
+        form.reset();
+        setStatus("Terima kasih, ucapan Anda sudah terkirim.", "success");
+      } catch (error) {
+        console.error("Gagal mengirim ucapan:", error);
+        setStatus("Ucapan gagal dikirim. Periksa koneksi atau rules Firestore.", "error");
+      } finally {
+        setSubmitLoading(false);
+      }
+    });
+  }
 </script>
 
 </body>
